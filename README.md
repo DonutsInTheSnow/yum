@@ -8,7 +8,7 @@ This bakery mock-up proves to employers and coders I can bake a Next.js app from
 
 ## Live Demo
 
-Savor the production app at [https://yum.vercel.app/](https://yum.vercel.app/).
+Savor the production app at [https://yum-lilac.vercel.app/](https://yum-lilac.vercel.app/).
 
 ## Getting Started Locally
 
