@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yum - Next.js Portfolio Project
 
-## Getting Started
+Well, **Yum**, that fine Wolfeboro, NH bakery, is a hearty e-commerce delight, crafted with the wizardry of [Next.js](https://nextjs.org). It’s the third of ten ventures I aim to conquer, each a unique treat. Browse our baked goods, fill a cart, and let Stripe whisk your payment away, all tracked by Supabase.
 
-First, run the development server:
+## Purpose
 
-```bash
+This bakery mock-up proves to employers and coders I can bake a Next.js app from scratch, test it with Jest, and serve it on Vercel—perfect for those savoring Wolfeboro’s charm.
+
+## Live Demo
+
+Savor the production app at [https://yum.vercel.app/](https://yum.vercel.app/).
+
+## Getting Started Locally
+
+Clone the repo, install dependencies, set `.env.local` vars, and run:
+
+```bash```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Testing with Jest
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To enable Jest testing, you’ll need a temporary `babel.config.js` file in the project root. This allows `babel-jest` to work without interfering with Next.js’s SWC compiler during normal development.
 
-## Learn More
+> ⚠️ **Important**: Only use this file when running tests. Delete or rename it before running `npm run dev`, or your app will crash due to SWC conflicts.
 
-To learn more about Next.js, take a look at the following resources:
+### Create `babel.config.js` (temporarily) with this content:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```js
+// babel.config.js
+/**
+ * Create this file at the root level and activate only when running Jest tests.
+ * Remove this file altogether when running `npm run dev`, 
+ * or you’ll break SWC and Next.js font support.
+ *
+ * To run tests:
+ *   1. Uncomment the export below
+ *   2. Run `npm test`
+ *   3. Re-comment the export when done
+ */
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+// module.exports = {
+//   presets: [
+//     ['next/babel', { 'preset-react': { runtime: 'automatic' } }]
+//   ],
+// };```
